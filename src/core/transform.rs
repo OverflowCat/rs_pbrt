@@ -539,9 +539,9 @@ impl Transform {
         let y: Float = n.y;
         let z: Float = n.z;
         Normal3f {
-            x: self.m_inv.m[0][0] * x + self.m_inv.m[1][0] * y + self.m_inv.m[2][0] * z,
-            y: self.m_inv.m[0][1] * x + self.m_inv.m[1][1] * y + self.m_inv.m[2][1] * z,
-            z: self.m_inv.m[0][2] * x + self.m_inv.m[1][2] * y + self.m_inv.m[2][2] * z,
+            x: self.m.m[0][0] * x + self.m.m[0][1] * y + self.m.m[0][2] * z,
+            y: self.m.m[1][0] * x + self.m.m[1][1] * y + self.m.m[1][2] * z,
+            z: self.m.m[2][0] * x + self.m.m[2][1] * y + self.m.m[2][2] * z,
         }
     }
     pub fn transform_ray(&self, r: &Ray) -> Ray {
